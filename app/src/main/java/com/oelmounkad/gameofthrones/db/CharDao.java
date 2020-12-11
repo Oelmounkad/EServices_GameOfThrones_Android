@@ -1,11 +1,11 @@
-package com.oelmounkad.gotapistarter.db;
+package com.oelmounkad.gameofthrones.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.gameofthrones.Dao;
 import androidx.gameofthrones.Insert;
 import androidx.gameofthrones.Query;
 
-import com.oelmounkad.gotapistarter.model.Character;
+import com.oelmounkad.gameofthrones.model.Character;
 
 
 import java.util.ArrayList;

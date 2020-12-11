@@ -1,4 +1,4 @@
-package com.oelmounkad.gotapistarter.model;
+package com.oelmounkad.gameofthrones.model;
 
 import androidx.gameofthrones.Entity;
 import androidx.gameofthrones.PrimaryKey;
