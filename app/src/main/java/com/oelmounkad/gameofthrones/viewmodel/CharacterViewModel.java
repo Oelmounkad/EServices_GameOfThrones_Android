@@ -32,6 +32,7 @@ public class CharacterViewModel extends ViewModel {
     }
 
     public void getCharacters() {
+
         repository.getCharacters()
                 .subscribeOn(Schedulers.io())
                 .map(charListResponse -> {

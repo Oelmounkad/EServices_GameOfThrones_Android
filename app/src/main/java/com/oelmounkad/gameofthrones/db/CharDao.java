@@ -1,10 +1,10 @@
 package com.oelmounkad.gameofthrones.db;
 
 import androidx.lifecycle.LiveData;
-import androidx.gameofthrones.Dao;
-import androidx.gameofthrones.Insert;
-import androidx.gameofthrones.Query;
 
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
 import com.oelmounkad.gameofthrones.model.Character;
 
 

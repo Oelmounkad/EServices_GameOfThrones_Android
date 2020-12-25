@@ -1,8 +1,8 @@
 package com.oelmounkad.gameofthrones.model;
 
-import androidx.gameofthrones.Entity;
-import androidx.gameofthrones.PrimaryKey;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 
 @Entity(tableName = "characters")
