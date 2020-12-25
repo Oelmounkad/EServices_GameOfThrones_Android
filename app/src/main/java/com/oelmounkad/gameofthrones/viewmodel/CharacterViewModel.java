@@ -37,7 +37,7 @@ public class CharacterViewModel extends ViewModel {
                 .subscribeOn(Schedulers.io())
                 .map(charListResponse -> {
                     ArrayList<Character> list = charListResponse;
-                    if(repository.getAllCharacters() == null){
+                    if(repository.getAllCharacters().isEmpty() == true){
                         // Persist All characters to the DB
                         for (Character ch: list) {
                             repository.insertCharacter(ch);
