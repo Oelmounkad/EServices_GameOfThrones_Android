@@ -21,10 +21,10 @@ public class RetrofitModule {
     public static CharApiService provideCharacterApiService(){
 
         return  new Retrofit.Builder()
-                .baseUrl(" https://thronesapi.com/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .baseUrl(" https://thronesapi.com/api/v2/") // Url de notre API
+                .addConverterFactory(GsonConverterFactory.create()) // Convertisseur Gson pour Serialization / De-serialization
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //Pour Avoir un Observable comme reponse finale
                 .build()
-                .create(CharApiService.class);
+                .create(CharApiService.class); // La classe des methodes qui font appel a l'API
     }
 }

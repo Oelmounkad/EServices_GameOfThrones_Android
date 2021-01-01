@@ -38,7 +38,9 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
 
     @Override
     public void onBindViewHolder(@NonNull CharacterViewHolder holder, int position) {
+        // On bind le nom du personnage avec le textView characterName dans l'item du recyclerView
         holder.itemBinding.characterName.setText(mList.get(position).getFullName());
+        //On fait la meme chose pour l'image on Utilisant la bibliothèque Glide
         Glide.with(mContext).load(mList.get(position).getImageUrl())
                 .into(holder.itemBinding.characterImage);
     }
@@ -57,9 +59,9 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
             itemBinding.recyclerItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //Si on clique sur un élément du RecyclerView on récupère sa position et on la passe à l'Activité détails
                     int position = getAdapterPosition();
                     String s = Integer.toString(position);
-                    Log.d("RecyclerView", "POSITION#################################：" + s);
 
                     Intent intent = new Intent(mContext, DetailsActivity.class);
                     intent.putExtra("position",s);
@@ -75,7 +77,4 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
         notifyDataSetChanged();
     }
 
-    public  Character getCharacterAt(int position){
-        return mList.get(position);
-    }
 }

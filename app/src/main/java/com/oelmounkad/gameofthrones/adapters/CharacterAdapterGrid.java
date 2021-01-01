@@ -59,7 +59,6 @@ public class CharacterAdapterGrid extends RecyclerView.Adapter<CharacterAdapterG
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     String s = Integer.toString(position);
-                    Log.d("RecyclerView", "onClick#################################：" + s);
 
                     Intent intent = new Intent(mContext, DetailsActivity.class);
                     intent.putExtra("position",s);
@@ -74,7 +73,4 @@ public class CharacterAdapterGrid extends RecyclerView.Adapter<CharacterAdapterG
         notifyDataSetChanged();
     }
 
-    public  Character getCharacterAt(int position){
-        return mList.get(position);
-    }
 }

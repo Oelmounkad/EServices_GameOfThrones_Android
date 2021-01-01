@@ -36,17 +36,20 @@ public class DetailsActivity extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         ivImage = findViewById(R.id.ivImage);
 
+        // On récupére la position de l'élément
         pos = getIntent().getStringExtra("position");
-        //tvFirstName.setText(pos);
+
 
         id = Integer.parseInt(pos);
         Log.d("DetailsActivity", String.valueOf(id));
-        Character ch = viewModel.getCharacterById(id);
 
+        //On récupère le Character depuis la BDD dont l'id correspond à la position de l'élément qu'on veut afficher
+        Character ch = viewModel.getCharacterById(id);
+        //On set les textview avec les infos du Character
         tvFullname.setText(ch.getFullName());
         tvFamily.setText(ch.getFamily());
         tvTitle.setText(ch.getTitle());
-
+        //Pour l'image on doit utiliser Glide
         Glide.with(ivImage.getContext()).load(ch.getImageUrl())
                 .into(ivImage);
 
