@@ -55,7 +55,6 @@ public class Home extends Fragment {
         viewModel.getCharacterList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Character>>() {
             @Override
             public void onChanged(ArrayList<Character> characters) {
-                Log.e(TAG, "onChanged: " + characters.size() );
                 adapter.updateList(characters);
             }
         });

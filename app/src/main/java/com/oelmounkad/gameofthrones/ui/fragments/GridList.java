@@ -28,11 +28,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class GridList extends Fragment {
-    private static final String TAG = "Home";
+    private static final String TAG = "Grid List";
     private GridListBinding binding;
-    // private PokemonViewModel viewModel;
+
     private CharacterViewModel viewModel;
-    // private PokemonAdapter adapter;
+
     private CharacterAdapterGrid adapter;
     private ArrayList<Character> characterList;
 
@@ -55,20 +55,22 @@ public class GridList extends Fragment {
     }
 
 
-
+    // On observe les données s'ils changent cette fonction vas etre notifié du coup on peut update l'Adapter de notre recycler view
     private void observeData() {
         viewModel.getCharacterList().observe(getViewLifecycleOwner(), new Observer<ArrayList<Character>>() {
             @Override
             public void onChanged(ArrayList<Character> characters) {
-                Log.e(TAG, "onChanged: " + characters.size() );
                 adapter.updateList(characters);
             }
         });
     }
 
     private void initRecyclerView() {
+        //Pour l'affichage sous forme de Grille
         binding.characterRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        //Donner la liste a l'adapteur
         adapter = new CharacterAdapterGrid(getContext(),characterList);
+        // Binder l'adapter au recyclerView
         binding.characterRecyclerView.setAdapter(adapter);
     }
 }
